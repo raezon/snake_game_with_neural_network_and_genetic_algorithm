@@ -25,3 +25,4 @@ This is a **Snake game** implemented in Python, where the snake can learn to pla
 ```bash
 pip install pygame numpy matplotlib
 # snake_game_with_neural_network_and_genetic_algorithm
+# snake_game_with_neural_network_and_genetic_algorithm

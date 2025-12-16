@@ -12,7 +12,7 @@ class GeneticAlgorithm:
         self.history = []
 
     def evaluate(self):
-        return true
+        return True
 
     def select(self):
        
