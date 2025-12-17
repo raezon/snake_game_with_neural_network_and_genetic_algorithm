@@ -83,10 +83,14 @@ class Snake:
         out = self.network.forward(self.get_vision(food))
         self.turn(DIRECTIONS[np.argmax(out)])
 
+
     def calculate_fitness(self):
-        self.fitness = (
-            self.score * 100
-            + self.steps * 0.1
-            - self.steps_without_food * 0.2
-        )
-        return max(0, self.fitness)
+        # On récompense simplement le score et la durée de vie
+        self.fitness = (self.score * 1000) + (self.steps * 0.1)
+    
+        # Optionnel : pénalité légère si mort contre un mur ou soi-même 
+        # pour différencier de la mort par famine (timeout)
+        if self.steps_without_food >= 120:
+            self.fitness -= 10 # Pénalité si mort de faim
+        
+        return max(0.1, self.fitness) # Toujours retourner au moins une petite valeur positive
