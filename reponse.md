@@ -1,8 +1,3 @@
-# Partie 1 : 
-
-## En cours 
-
-
 # Partie 2 : Architecture de l’agent IA 
 
 ## 3.2 Questions d’architecture
